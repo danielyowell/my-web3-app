@@ -1,6 +1,8 @@
 import './App.css';
 import CONNECT_WALLET from './components/CONNECT_WALLET.js';
+import CreateItem from './CreateItem';
 //import LATEST_BLOCK from './components/LATEST_BLOCK.js';
+import ItemList from './ItemList';
 
 function App() {
   return (
@@ -17,6 +19,14 @@ function App() {
           Sell stuff!
         </header>
         <br/>
+        <div className="App">
+      {/* ... */}
+      <CreateItem />
+      {/* ... */}
+            {/* ... */}
+            <ItemList />
+      {/* ... */}
+    </div>
         <header className="App-header2">
           <CONNECT_WALLET />
         </header>
