@@ -14,14 +14,31 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #282c34; /* This is the website's background color. */
+  min-height: 100vh; /* Minimum height of this element = 100% of viewport height */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* column left left = top left */
+  /* column center center = center of page */
+  flex-direction: column; /* Stacks children vertically, from top to bottom. */
+  align-items: center; /* Aligns flex items along the cross axis (see above) at the center. */
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-header2 {
+  background-color: #3b4863; /* This is the website's background color. */
+  min-height: 0vh; /* Minimum height of this element = 100% of viewport height */
+  display: flex;
+  /* column left left = top left */
+  /* column center center = center of page */
+  flex-direction: column; /* Stacks children vertically, from top to bottom. */
+  align-items: center; /* Aligns flex items along the cross axis (see above) at the center. */
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
 }
 
 .App-link {
