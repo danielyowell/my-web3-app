@@ -33,7 +33,12 @@ const ItemList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="App">
+    <header className="App-header">
+      <p>
+        TESTNET MARKETPLACE
+      </p>
+      <div>
       <h2>Available Items</h2>
       <ul>
         {items.map((item) => (
@@ -47,6 +52,8 @@ const ItemList = () => {
         ))}
       </ul>
     </div>
+    </header>
+  </div>
   );
 };
 
