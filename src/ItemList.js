@@ -1,6 +1,8 @@
+import './App.css';
 import React, { useState, useEffect } from 'react';
 import web3 from './web3';
 import itemMarketplaceContract from './itemMarketplaceContract';
+import {Link } from 'react-router-dom';
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -34,27 +36,35 @@ const ItemList = () => {
 
   return (
     <div className="App">
-    <header className="App-header">
-      <p>
-        TESTNET MARKETPLACE
-      </p>
-      <div>
-      <h2>Available Items</h2>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
-            <p>Price: {item.price} Ether</p>
-            <p>Seller: {item.seller}</p>
-            <p>Available: {item.isAvailable ? 'Yes' : 'No'}</p>
-          </li>
-        ))}
-      </ul>
+      <header className="App-header">
+        <Link to="/">
+          <button className="buy-btn">Back</button>
+        </Link>
+        <h2>
+          TESTNET MARKETPLACE
+        </h2>
+        <div>
+          <h2>Available Items</h2>
+          <ul className="item-list">
+            {items.map((item) => (
+              <li key={item.id}>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <p className="price">Price: {item.price} Ether</p>
+                <p className="seller">Seller: {item.seller}</p>
+                <p className={item.isAvailable ? 'available' : 'unavailable'}>Available: {item.isAvailable ? 'Yes' : 'No'}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </header>
     </div>
-    </header>
-  </div>
   );
 };
+
+const Footer = () =>
+  <header className="App-footer">
+    © Daniel Yowell, 2024-2024
+  </header>
 
 export default ItemList;

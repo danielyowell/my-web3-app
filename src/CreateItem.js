@@ -1,6 +1,9 @@
+import './App.css';
 import React, { useState } from 'react';
 import web3 from './web3';
 import itemMarketplaceContract from './itemMarketplaceContract';
+import { Link } from 'react-router-dom';
+//import Footer from './App';
 
 const CreateItem = () => {
   const [name, setName] = useState('');
@@ -30,42 +33,62 @@ const CreateItem = () => {
   };
 
   return (
-    <div>
-      <h2>Create Item</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="App">
+      <header className="App-header">
+        <Link to="/">
+          <button className="buy-btn">Back</button>
+        </Link>
+        <p>
+          TESTNET MARKETPLACE
+        </p>
         <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+          <header className="App-header2">
+            <h2>Create Item</h2>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="name">Name: </label>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <br />
+              <div>
+                <label htmlFor="description">Description: </label>
+                <textarea
+                  id="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                />
+              </div>
+              <br />
+              <div>
+                <label htmlFor="price">Price (in Ether): </label>
+                <input
+                  type="number"
+                  id="price"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </header>
         </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="price">Price (in Ether):</label>
-          <input
-            type="number"
-            id="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Create Item</button>
-      </form>
+      </header>
+      <Footer />
     </div>
   );
 };
 
+const Footer = () =>
+  <header className="App-footer">
+    © Daniel Yowell, 2024-2024
+  </header>
+  
 export default CreateItem;
