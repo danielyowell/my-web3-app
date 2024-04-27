@@ -59,9 +59,4 @@ const ItemList = () => {
   );
 };
 
-const Footer = () =>
-  <header className="FOOTER">
-    © Daniel Yowell, 2024-2024
-  </header>
-
 export default ItemList;
