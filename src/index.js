@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 //import { Web3ReactProvider } from '@web3-react/core'; what is this?
 import './index.css';
 import App from './App';
+import DummyApp from './DummyApp';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <DummyApp />
   </React.StrictMode>
 );
 

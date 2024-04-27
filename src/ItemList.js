@@ -35,27 +35,24 @@ const ItemList = () => {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header className="BACKGROUND">
         <Link to="/">
-          <button className="buy-btn">Back</button>
+          <button>Back</button>
         </Link>
-        <h2>
-          TESTNET MARKETPLACE
-        </h2>
         <div>
           <h2>Available Items</h2>
-          <ul className="item-list">
+          <ol className="item-list">
             {items.map((item) => (
               <li key={item.id}>
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <p className="price">Price: {item.price} Ether</p>
+                <p className="price">Price: {item.price} SepoliaETH</p>
                 <p className="seller">Seller: {item.seller}</p>
                 <p className={item.isAvailable ? 'available' : 'unavailable'}>Available: {item.isAvailable ? 'Yes' : 'No'}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </header>
     </div>
@@ -63,7 +60,7 @@ const ItemList = () => {
 };
 
 const Footer = () =>
-  <header className="App-footer">
+  <header className="FOOTER">
     © Daniel Yowell, 2024-2024
   </header>
 

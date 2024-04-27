@@ -1,4 +1,29 @@
+/* PART 1: THE BASICS */
+
+:root {
+  --BACKGROUND: #282c34;
+  --FOREGROUND: #3b4863;
+  min-width: 100%;
+  max-width: 100%;
+}
+
 .App {
+  background-image: url("imgs/bg.png");
+  background-size: 100vw 100vh;
+  min-height: 100vh;
+  text-align: center;
+  /* place all contents in center */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.AppHome {
+  background-image: url("imgs/bg_home.png");
+  background-size: 100vw 100vh;
+  min-height: 100vh; 
   text-align: center;
 }
 
@@ -13,27 +38,37 @@
   }
 }
 
-.App-header {
-  background-color: #282c34; /* This is the website's background color. */
-  min-height: 90vh; /* Minimum height of this element = 100% of viewport height */
+/*
   display: flex;
-  /* column left left = top left */
-  /* column center center = center of page */
-  flex-direction: column; /* Stacks children vertically, from top to bottom. */
-  align-items: center; /* Aligns flex items along the cross axis (see above) at the center. */
+  /* column left left = top left 
+  /* column center center = center of page 
+  flex-direction: column; /* Stacks children vertically, from top to bottom.
+  align-items: center; /* Aligns flex items along the cross axis (see above) at the center.
+*/
+.BACKGROUND {
+  /* background-color: var(--BACKGROUND); This is the website's background color. */
+  
+  min-height: 85vh; /* Minimum height of this element = 100% of viewport height */
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-header2 {
-  background-color: #3b4863; /* This is the website's background color. */
-  min-height: 5vh; /* Minimum height of this element = 100% of viewport height */
+.FUNNYBOX {
+  border-width: 5px;
+  padding: 20px;
+}
+
+.FOREGROUND {
+  background-color: var(--FOREGROUND);
+  min-height: 5vh;
   display: flex;
-  /* column left left = top left */
-  /* column center center = center of page */
-  flex-direction: column; /* Stacks children vertically, from top to bottom. */
-  align-items: center; /* Aligns flex items along the cross axis (see above) at the center. */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -41,18 +76,51 @@
   border-radius: 15px;
 }
 
-.App-footer {
-  background-color: #000000; /* This is the website's background color. */
-  min-height: 6vh; /* Minimum height of this element = 100% of viewport height */
+.SELL_ITEM {
+  background-color: var(--FOREGROUND);
+  min-height: 5vh;
   display: flex;
-  /* column left left = top left */
-  /* column center center = center of page */
-  flex-direction: row; /* Stacks children vertically, from top to bottom. */
-  align-items: right; /* Aligns flex items along the cross axis (see above) at the center. */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 15px;
+}
+
+.TITLE {
+  background-image: url("imgs/title2.png");
+  min-height: 10vh;
+  max-height: 15vh;
+  font-size: calc(15px + 2vmin);
+  color: white;
+  padding: 5px;
+}
+
+.FOOTER {
+  background-color: #000000;
+  min-height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
   justify-content: right;
   font-size: calc(5px + 2vmin);
   color: white;
   padding: 15px;
+}
+
+.ETH {
+  background-image: url("imgs/ETH.png");
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(2px + 2vmin);
+  color: white;
+  padding: 5px;
+  /* border-radius: 15px; */
+  width: 500px;
 }
 
 .App-link {
@@ -68,24 +136,44 @@
   }
 }
 
+.wallet {
+  color: white;
+}
+
 /* PART 2: BUTTONS!! */
 /* General button styles */
 button {
+  background-image: url('imgs/BUTTON2.png');
   padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
+  font-size: 25px;
+  /* border-radius: 4px; */
   cursor: pointer;
   transition: background-color 0.3s ease;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain; /* Adjust the button size to match the image */
+  background-position: center; /* Center the image within the button */
+  width: 38vh;
+  color: white;
+  font-weight: bold;
+}
+
+.submit {
+  background-image: url('imgs/SUBMITBUTTON.png');
 }
 
 /* Specific styles for the "Buy Items" button */
 .buy-btn {
-  background-color: #4CAF50;
+  background-image: url("imgs/SUBMITBUTTON.png");
   color: white;
   border: none;
 }
 
 .buy-btn:hover {
+  background-color: #45a049;
+}
+
+.b1:hover {
   background-color: #45a049;
 }
 
@@ -102,30 +190,32 @@ button {
 
 /* PART 3: LIST!!! */
 
-/* App.css */
-
 /* Styles for the list items */
 .item-list li {
-  background-color: #f5f5f5;
+  background-image: url("imgs/ITEM.png");
+  /* background-color: #3b4863; */
   padding: 20px;
   margin-bottom: 10px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 15px;
+  line-height: 0.5;
 }
 
 .item-list h3 {
   margin-top: 0;
-  color: #333;
+  color: white;
 }
 
 .item-list p {
   margin-bottom: 5px;
-  color: #666;
+  color: white;
 }
 
 .item-list .price {
   color: #4CAF50;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .item-list .seller {
@@ -140,4 +230,46 @@ button {
 .item-list .unavailable {
   color: #ff4d4d;
   font-weight: bold;
+}
+
+/* ??? */
+.box {
+  background-color: #3b4863;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* vh is static */
+  height: 80vh;
+  width: 50vh;
+  row-gap: 50px;
+}
+
+.box-container {
+  background-image: url('imgs/menu.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 50vh;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.box-container2 {
+  background-image: url('imgs/create_item.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 60vh;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.box-image {
+  max-width: 100%;
+  max-height: 100%;
 }

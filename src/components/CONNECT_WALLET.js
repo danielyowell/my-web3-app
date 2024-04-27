@@ -23,7 +23,7 @@ const MyComponent = () => {
 
   return (
     <div>
-      <h2>My Ethereum Account</h2>
+      {/* <h2>My Ethereum Account</h2> */}
       <p>Account: {account}</p>
     </div>
   );

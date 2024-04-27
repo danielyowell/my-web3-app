@@ -20,28 +20,27 @@ function App() {
 }
 
 const Home = () =>
-  <div className="App">
-    <header className="App-header">
-      <h2>
-        TESTNET MARKETPLACE
-      </h2>
-      <Link to="/buy-items">
-        <button className="buy-btn">Buy Items</button>
-      </Link>
-      <br />
-      <Link to="/sell-items">
-        <button className="sell-btn">Sell Items</button>
-      </Link>
-      <br />
-      <header className="App-header2">
-        <CONNECT_WALLET />
+  <div className="AppHome">
+    <div className='FUNNYBOX'>
+      <header className="BACKGROUND">
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <h2 className="TITLE"></h2>
+        <Link to="/buy-items">
+          <button className="buy-btn">Buy Items</button>
+        </Link>
+        <Link to="/sell-items">
+          <button className="sell-btn">Sell Items</button>
+        </Link>
+        <header className="ETH">
+          <CONNECT_WALLET />
+        </header>
       </header>
-    </header>
+    </div>
     <Footer />
   </div>;
 
 const Footer = () =>
-  <header className="App-footer">
+  <header className="FOOTER">
     © Daniel Yowell, 2024-2024
   </header>
 

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import web3 from './web3';
 import itemMarketplaceContract from './itemMarketplaceContract';
 import { Link } from 'react-router-dom';
-//import Footer from './App';
 
 const CreateItem = () => {
   const [name, setName] = useState('');
@@ -33,16 +32,13 @@ const CreateItem = () => {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header className="BACKGROUND">
         <Link to="/">
-          <button className="buy-btn">Back</button>
+          <button>Back</button>
         </Link>
-        <p>
-          TESTNET MARKETPLACE
-        </p>
         <div>
-          <header className="App-header2">
+          <header className="box-container2">
             <h2>Create Item</h2>
             <form onSubmit={handleSubmit}>
               <div>
@@ -67,7 +63,7 @@ const CreateItem = () => {
               </div>
               <br />
               <div>
-                <label htmlFor="price">Price (in Ether): </label>
+                <label htmlFor="price">Price (Sepolia): </label>
                 <input
                   type="number"
                   id="price"
@@ -76,19 +72,20 @@ const CreateItem = () => {
                   required
                 />
               </div>
-              <button type="submit">Submit</button>
+              <br />
+              <button className="buy-btn">Submit</button>
             </form>
           </header>
         </div>
       </header>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
 
 const Footer = () =>
-  <header className="App-footer">
+  <header className="FOOTER">
     © Daniel Yowell, 2024-2024
   </header>
-  
+
 export default CreateItem;
