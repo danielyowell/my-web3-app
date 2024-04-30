@@ -6,7 +6,6 @@ import itemMarketplaceContract from './itemMarketplaceContract';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ItemList = () => {
-  
   console.log('BUY ITEM');
 
   // Handle purchase
@@ -56,23 +55,25 @@ const ItemList = () => {
         </Link>
         <div>
           <h2>Available Items</h2>
-          <ol className="item-list">
-            {items.map((item) => (
-              <li key={item.id}>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <p className="price">Price: {item.price} SepoliaETH</p>
-                <p className="seller">Seller: {item.seller}</p>
-                <p className={item.isAvailable ? 'available' : 'unavailable'}>
-                  Available: {item.isAvailable ? 'Yes' : 'No'}
-                </p>
-                <br /><br />
-                {item.isAvailable && (
-                  <button className="buyme" onClick={() => handlePurchase(item.id)}>Purchase</button>
-                )}
-              </li>
-            ))}
-          </ol>
+          <div className="item-list-container">
+            <ol className="item-list">
+              {items.map((item) => (
+                <li key={item.id}>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <p className="price">Price: {item.price} SepoliaETH</p>
+                  <p className="seller">Seller: {item.seller}</p>
+                  <p className={item.isAvailable ? 'available' : 'unavailable'}>
+                    Available: {item.isAvailable ? 'Yes' : 'No'}
+                  </p>
+                  <br /><br />
+                  {item.isAvailable && (
+                    <button className="buyme" onClick={() => handlePurchase(item.id)}>Purchase</button>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </header>
     </div>

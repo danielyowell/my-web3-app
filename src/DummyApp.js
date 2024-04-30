@@ -29,7 +29,7 @@ const Home = () => {
   return (
     //  className="App"
     <div>
-      <header>
+      <div>
         <div className="box-container">
           <img src={title2} alt="test" className="box-image" />
           <br /><br /><br />
@@ -49,7 +49,7 @@ const Home = () => {
             {account ? '(Wallet successfully connected)' : '(No wallet connected)'}
           </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 }

@@ -22,7 +22,7 @@ function App() {
 const Home = () =>
   <div className="AppHome">
     <div className='FUNNYBOX'>
-      <header className="BACKGROUND">
+      <div className="BACKGROUND">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <h2 className="TITLE"></h2>
         <Link to="/buy-items">
@@ -31,17 +31,17 @@ const Home = () =>
         <Link to="/sell-items">
           <button className="sell-btn">Sell Items</button>
         </Link>
-        <header className="ETH">
+        <div className="ETH">
           <CONNECT_WALLET />
-        </header>
-      </header>
+        </div>
+      </div>
     </div>
     <Footer />
   </div>;
 
 const Footer = () =>
-  <header className="FOOTER">
+  <div className="FOOTER">
     © Daniel Yowell, 2024-2024
-  </header>
+  </div>
 
 export default App;
