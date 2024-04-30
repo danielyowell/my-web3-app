@@ -123,6 +123,10 @@
   width: 500px;
 }
 
+.loading {
+  color: white;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -165,8 +169,18 @@ button {
 /* Specific styles for the "Buy Items" button */
 .buy-btn {
   background-image: url("imgs/SUBMITBUTTON.png");
+  display: flex;
+  flex-direction: column;
   color: white;
   border: none;
+}
+
+.buyme {
+  /* adjust width of button */
+  width: 24.9vh;
+  background-image: url("imgs/purchase_button.png");
+  justify-content: center;
+  align-items: center;
 }
 
 .buy-btn:hover {

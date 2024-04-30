@@ -35,7 +35,7 @@ const CreateItem = () => {
     <div>
       <header className="BACKGROUND">
         <Link to="/">
-          <button>Back</button>
+          <button onClick={() => console.log('Back')}>Back</button>
         </Link>
         <div>
           <header className="box-container2">
