@@ -9,6 +9,8 @@ const CreateItem = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
 
+  console.log('CREATE ITEM');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 

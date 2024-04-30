@@ -7,6 +7,7 @@ import ItemList from './ItemList';
 import title2 from './imgs/title2.png';
 import account from './components/CONNECT_WALLET.js';
 import PurchasePage from './PurchasePage.js';
+import PurchasePage2 from './PurchasePage2.js';
 
 function App() {
   return (
@@ -16,37 +17,42 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/buy-items" element={<ItemList />} />
           <Route path="/sell-items" element={<CreateItem />} />
-          <Route path="/purchase" element={<PurchasePage />} />
+          <Route path="/purchase" element={<PurchasePage2 />} />
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
 
-const Home = () =>
+const Home = () => {
+  console.log('HOME');
+  return (
     //  className="App"
     <div>
       <header>
         <div className="box-container">
-        <img src={title2} alt="test" className="box-image" />
+          <img src={title2} alt="test" className="box-image" />
           <br /><br /><br />
           <Link to="/buy-items">
-          <button className="b1" onClick={() => console.log('Buy Items button clicked')}>Buy Items</button>
+            <button className="b1" onClick={() => console.log('Buy Items button clicked')}>Buy Items</button>
           </Link>
           <br />
           <Link to="/sell-items">
-          <button className="b1" onClick={() => console.log('Sell Items button clicked')}>Sell Items</button>
+            <button className="b1" onClick={() => console.log('Sell Items button clicked')}>Sell Items</button>
           </Link>
           <br />
           <Link to={CONNECT_WALLET}>
-          <button className="b1" onClick={() => console.log('Connect Wallet button clicked')}>Connect Wallet</button>
+            <button className="b1" onClick={() => console.log('Connect Wallet button clicked')}>Connect Wallet</button>
           </Link>
           <br />
           <div className="wallet">
-          {account ? '(Wallet successfully connected)' : '(No wallet connected)'}
-            </div>
+            {account ? '(Wallet successfully connected)' : '(No wallet connected)'}
+          </div>
         </div>
       </header>
     </div>
+  );
+}
+
 
 export default App;

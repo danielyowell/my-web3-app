@@ -5,6 +5,8 @@ import itemMarketplaceContract from './itemMarketplaceContract';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ItemList = () => {
+  
+  console.log('BUY ITEM');
 
   // Handle purchase
   const [selectedItemId, setSelectedItemId] = useState(null);
@@ -13,7 +15,7 @@ const ItemList = () => {
     console.log("Handling purchase for item id:", itemId);
     setSelectedItemId(itemId);
     console.log("Navigate to purchase URL");
-    navigate('/purchase');
+    navigate('/sell-items');
   };
 
   const [items, setItems] = useState([]);
@@ -63,7 +65,7 @@ const ItemList = () => {
                 <p className={item.isAvailable ? 'available' : 'unavailable'}>
                   Available: {item.isAvailable ? 'Yes' : 'No'}
                 </p>
-                <br />
+                <br /><br />
                 {item.isAvailable && (
                   <button className="buyme" onClick={() => handlePurchase(item.id)}>Purchase</button>
                 )}
