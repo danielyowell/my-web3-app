@@ -1,3 +1,4 @@
+/* This component lists items for purchase. */
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import web3 from './web3';
@@ -15,7 +16,7 @@ const ItemList = () => {
     console.log("Handling purchase for item id:", itemId);
     setSelectedItemId(itemId);
     console.log("Navigate to purchase URL");
-    navigate('/sell-items');
+    navigate(`/purchase?itemId=${itemId}`);
   };
 
   const [items, setItems] = useState([]);

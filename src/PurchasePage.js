@@ -3,9 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import web3 from './web3';
 import itemMarketplaceContract from './itemMarketplaceContract';
+import { useSearchParams } from 'react-router-dom';
 
 const PurchasePage = ({ selectedItemId }) => {
     console.log("Navigated to purchase page...");
+
+    const [searchParams] = useSearchParams();
+    const itemId = searchParams.get('itemId');
+
+    
     // By default, the item is set to null and loading is set to true
     const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -18,7 +24,7 @@ const PurchasePage = ({ selectedItemId }) => {
         const fetchItem = async () => {
             try {
                 console.log("Fetching item...");
-                const fetchedItem = await itemMarketplaceContract.methods.items(selectedItemId).call();
+                const fetchedItem = await itemMarketplaceContract.methods.items(itemId).call();
                 console.log("FetchedItem: ", fetchedItem);
                 setItem({
                     id: fetchedItem.id,
@@ -36,7 +42,7 @@ const PurchasePage = ({ selectedItemId }) => {
             }
         };
 
-        if (selectedItemId) {
+        if (itemId) {
             fetchItem();
         }
     }, [selectedItemId]);
@@ -54,22 +60,22 @@ const PurchasePage = ({ selectedItemId }) => {
         }
     };
 
-    // if (loading) {
-    //     return <div className='loading'>Loading...</div>;
-    // }
+    if (loading) {
+        return <div className='loading'>Loading...</div>;
+    }
 
     if (!item) {
         return <div className='loading'>No item selected</div>;
     }
 
     return (
-        <div>
+        <div className='cart'>
             <Link to="/buy-items">
                 <button onClick={() => console.log('Back')}>Back</button>
             </Link>
             <h2>Purchase Item</h2>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
+            <h3>Name: {item.name}</h3>
+            <p>Description: {item.description}</p>
             <p>Price: {item.price} SepoliaETH</p>
             <p>Seller: {item.seller}</p>
             {purchaseError && <p>{purchaseError}</p>}

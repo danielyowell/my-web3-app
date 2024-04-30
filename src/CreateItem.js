@@ -75,7 +75,7 @@ const CreateItem = () => {
                 />
               </div>
               <br />
-              <button className="buy-btn">Submit</button>
+              <button className="">Submit</button> {/* buy-btn */}
             </form>
           </header>
         </div>

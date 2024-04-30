@@ -183,6 +183,23 @@ button {
   align-items: center;
 }
 
+.cart {
+  background-image: url("imgs/menu.png");
+  /* background-color: #4CAF50; */
+  padding: 10px 20px;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain; /* Adjust the button size to match the image */
+  background-position: center; /* Center the image within the button */
+  width: 38vh;
+  color: white;
+  font-weight: bold;
+
+}
+
 .buy-btn:hover {
   background-color: #45a049;
 }
@@ -272,7 +289,7 @@ button {
 }
 
 .box-container2 {
-  background-image: url('imgs/create_item.png');
+  background-image: url('imgs/create_item.png'); /*background-image: url('imgs/create_item.png');*/
   display: flex;
   flex-direction: column;
   justify-content: center;
