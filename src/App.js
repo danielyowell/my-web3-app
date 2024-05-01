@@ -4,6 +4,10 @@ import React from 'react';
 import CONNECT_WALLET from './components/CONNECT_WALLET.js';
 import CreateItem from './CreateItem';
 import ItemList from './ItemList';
+import title2 from './imgs/title2.png';
+import account from './components/CONNECT_WALLET.js';
+import PurchasePage from './PurchasePage.js';
+//import PurchasePage2 from './PurchasePage2.js';
 
 function App() {
   return (
@@ -13,35 +17,42 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/buy-items" element={<ItemList />} />
           <Route path="/sell-items" element={<CreateItem />} />
+          <Route path="/purchase" element={<PurchasePage />} />
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
 
-const Home = () =>
-  <div className="AppHome">
-    <div className='FUNNYBOX'>
-      <div className="BACKGROUND">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <h2 className="TITLE"></h2>
-        <Link to="/buy-items">
-          <button className="buy-btn">Buy Items</button>
-        </Link>
-        <Link to="/sell-items">
-          <button className="sell-btn">Sell Items</button>
-        </Link>
-        <div className="ETH">
-          <CONNECT_WALLET />
+const Home = () => {
+  console.log('HOME');
+  return (
+    //  className="App"
+    <div>
+      <div>
+        <div className="box-container">
+          <img src={title2} alt="test" className="box-image" />
+          <br /><br /><br />
+          <Link to="/buy-items">
+            <button className="b1" onClick={() => console.log('Buy Items button clicked')}>Buy Items</button>
+          </Link>
+          <br />
+          <Link to="/sell-items">
+            <button className="b1" onClick={() => console.log('Sell Items button clicked')}>Sell Items</button>
+          </Link>
+          <br />
+          <Link to={CONNECT_WALLET}>
+            <button className="b1" onClick={() => console.log('Connect Wallet button clicked')}>Connect Wallet</button>
+          </Link>
+          <br />
+          <div className="wallet">
+            {account ? '(Wallet successfully connected)' : '(No wallet connected)'}
+          </div>
         </div>
       </div>
     </div>
-    <Footer />
-  </div>;
+  );
+}
 
-const Footer = () =>
-  <div className="FOOTER">
-    © Daniel Yowell, 2024-2024
-  </div>
 
 export default App;

@@ -80,14 +80,9 @@ const CreateItem = () => {
           </header>
         </div>
       </header>
-      {/* <Footer /> */}
+      {/* <Footer /> ?*/}
     </div>
   );
 };
-
-const Footer = () =>
-  <header className="FOOTER">
-    © Daniel Yowell, 2024-2024
-  </header>
 
 export default CreateItem;
