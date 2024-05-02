@@ -55,7 +55,7 @@ const PurchasePage = ({ selectedItemId }) => {
             });
             navigate('/');
         } catch (error) {
-            setPurchaseError('Error purchasing item');
+            setPurchaseError('Error purchasing item:', error);
             console.error('Error purchasing item:', error);
         }
     };
@@ -77,7 +77,6 @@ const PurchasePage = ({ selectedItemId }) => {
             <h3>Name: {item.name}</h3>
             <p>Description: {item.description}</p>
             <p>Price: {item.price} SepoliaETH</p>
-            <p>Seller: {item.seller}</p>
             {purchaseError && <p>{purchaseError}</p>}
             <button onClick={handlePurchase} disabled={!item.isAvailable}>
                 Purchase
