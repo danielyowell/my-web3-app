@@ -30,10 +30,10 @@ const ItemList = () => {
           const item = await itemMarketplaceContract.methods.items(i).call();
           fetchedItems.push({
             id: item.id,
-            name: item.name,
+            name: `${i}. ${item.name}`, // Prepend item number to name
             description: item.description,
             price: web3.utils.fromWei(item.price, 'ether'),
-            seller: item.seller,
+            seller: item.seller.slice(0, 5),
             isAvailable: item.isAvailable,
           });
         }
@@ -56,10 +56,10 @@ const ItemList = () => {
         <div>
           <h2>Available Items</h2>
           <div className="item-list-container">
-            <ol className="item-list">
+            <ul className="item-list">
               {items.map((item) => (
                 <li key={item.id}>
-                  <h3>{item.name}</h3>
+                  <h3>{item.name}</h3> {/* Item name with number */}
                   <p>{item.description}</p>
                   <p className="price">Price: {item.price} SepoliaETH</p>
                   <p className="seller">Seller: {item.seller}</p>
@@ -72,7 +72,7 @@ const ItemList = () => {
                   )}
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </div>
       </header>
