@@ -11,7 +11,7 @@
 }
 
 /* Contains miscellaneous variables for proper page rendering */
-.BACKGROUND {  
+.subpage {  
   min-height: 85vh; /* Minimum height of this element = 100% of viewport height */
   display: flex;
   flex-direction: column;

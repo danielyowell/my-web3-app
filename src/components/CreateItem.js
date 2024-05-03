@@ -43,7 +43,7 @@ const CreateItem = () => {
 
   return (
     <div>
-      <header className="BACKGROUND">
+      <header className="subpage">
         <Link to="/">
           <button onClick={() => console.log('Back')}>Back</button>
         </Link>
