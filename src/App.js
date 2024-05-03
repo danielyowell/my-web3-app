@@ -34,15 +34,15 @@ const Home = () => {
           <img src={app_logo} alt="test" className="LOGO_SIZE" />
           <br /><br /><br />
           <Link to="/buy-items">
-            <button className="b1" onClick={() => console.log('Buy Items button clicked')}>Buy Items</button>
+            <button onClick={() => console.log('Buy Items button clicked')}>Buy Items</button>
           </Link>
           <br />
           <Link to="/sell-items">
-            <button className="b1" onClick={() => console.log('Sell Items button clicked')}>Sell Items</button>
+            <button onClick={() => console.log('Sell Items button clicked')}>Sell Items</button>
           </Link>
           <br />
           <Link to={CONNECT_WALLET}>
-            <button className="b1" onClick={() => console.log('Connect Wallet button clicked')}>Connect Wallet</button>
+            <button onClick={() => console.log('Connect Wallet button clicked')}>Connect Wallet</button>
           </Link>
           <br />
           <div className="wallet">
