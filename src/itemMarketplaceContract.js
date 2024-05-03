@@ -2,7 +2,7 @@
 import web3 from './web3';
 
 // you'll get this when you deploy the contract.
-const contractAddress = '0x3cb1f88140a6c741eb95c0342b9cb43693ed78bc';
+const contractAddress = '0xa455de3296c300a301064310f0124ea8b44a6941';
 // the ABI is a JSON of some kind.
 const contractABI = [
 	{
