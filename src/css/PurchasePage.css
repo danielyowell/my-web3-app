@@ -1,14 +1,27 @@
 /* This is the menu element for the purchase page */
 .ITEM_CART {
-    background-image: url("../imgs/menu.png");
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain; /* Adjust the button size to match the image */
-    background-position: center; /* Center the image within the button */
-    width: 38vh;
-    color: white;
-    font-weight: bold;
-  }
+  background-image: url("../imgs/purchase_menu.png");
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 70vh;
+  width: 50vh;
+  color: white;
+  font-weight: bold;
+}
+
+.pur_info {
+  color: white;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.err {
+  color: red;
+  font-weight: 500;
+  font-size: small;
+}

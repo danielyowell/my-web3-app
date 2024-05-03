@@ -34,7 +34,7 @@ const ItemList = () => {
             name: `${i}. ${item.name}`, // Prepend item number to name
             description: item.description,
             price: web3.utils.fromWei(item.price, 'ether'),
-            seller: item.seller.slice(0, 5),
+            seller: item.seller.slice(0, 5) + '...'  + item.seller.slice(item.seller.length-3, item.seller.length),
             isAvailable: item.isAvailable,
           });
         }

@@ -11,8 +11,8 @@ const PurchasePage = () => { // { selectedItemId } inside parenths
 
     const [searchParams] = useSearchParams();
     const itemId = searchParams.get('itemId');
-    console.log("The item you want to buy is...",itemId);
-    
+    console.log("The item you want to buy is...", itemId);
+
     // By default, the item is set to null and loading is set to true
     const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -56,14 +56,14 @@ const PurchasePage = () => { // { selectedItemId } inside parenths
                 setPurchaseError('Please connect your wallet to proceed with the purchase.');
                 return;
             }
-    
+
             await itemMarketplaceContract.methods.purchaseItem(itemId).send({
                 from: fromAddress,
                 value: web3.utils.toWei(item.price, 'ether'),
             });
             navigate('/');
         } catch (error) {
-            setPurchaseError(`Error purchasing item: ${error.message}`);
+            setPurchaseError(`${error.message}`);
             console.error('Error purchasing item:', error);
         }
     };
@@ -77,18 +77,20 @@ const PurchasePage = () => { // { selectedItemId } inside parenths
     }
 
     return (
-        <div className='ITEM_CART'>
+        <div className="subpage">
             <Link to="/buy-items">
                 <button onClick={() => console.log('Back')}>Back</button>
             </Link>
-            <h2>Purchase Item</h2>
-            <h3>Name: {item.name}</h3>
-            <p>Description: {item.description}</p>
-            <p>Price: {item.price} SepoliaETH</p>
-            {purchaseError && <p>{purchaseError}</p>}
-            <button onClick={handlePurchase} disabled={!item.isAvailable}>
-                Purchase
-            </button>
+            <div className='ITEM_CART'>
+                <h2>Purchase Item</h2>
+                <h3 className='pur_info'>Name: {item.name}</h3>
+                <p className='pur_info'>Description: {item.description}</p>
+                <p className='pur_info'>Price: {item.price} SepoliaETH</p>
+                {purchaseError && <p className='err'>{purchaseError}</p>}
+                <button onClick={handlePurchase} disabled={!item.isAvailable}>
+                    Purchase
+                </button>
+            </div>
         </div>
     );
 };
