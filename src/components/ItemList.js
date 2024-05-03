@@ -50,7 +50,7 @@ const ItemList = () => {
 
   return (
     <div>
-      <header className="subpage">
+      <div className="subpage">
         <Link to="/">
           <button onClick={() => console.log('Back')}>Back</button>
         </Link>
@@ -76,7 +76,7 @@ const ItemList = () => {
             </ul>
           </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 };

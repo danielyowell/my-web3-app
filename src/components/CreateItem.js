@@ -43,7 +43,7 @@ const CreateItem = () => {
 
   return (
     <div>
-      <header className="subpage">
+      <div className="subpage">
         <Link to="/">
           <button onClick={() => console.log('Back')}>Back</button>
         </Link>
@@ -88,8 +88,7 @@ const CreateItem = () => {
             {successMessage && <p>{successMessage}</p>}
           </header>
         </div>
-      </header>
-      {/* <Footer /> ?*/}
+      </div>
     </div>
   );
 };
