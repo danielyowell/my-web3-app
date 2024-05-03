@@ -30,8 +30,8 @@ const Home = () => {
     //  className="App"
     <div>
       <div>
-        <div className="box-container">
-          <img src={title2} alt="test" className="box-image" />
+        <div className="HOME_MENU">
+          <img src={title2} alt="test" className="LOGO_SIZE" />
           <br /><br /><br />
           <Link to="/buy-items">
             <button className="b1" onClick={() => console.log('Buy Items button clicked')}>Buy Items</button>

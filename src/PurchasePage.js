@@ -5,7 +5,7 @@ import web3 from './web3';
 import itemMarketplaceContract from './itemMarketplaceContract';
 import { useSearchParams } from 'react-router-dom';
 
-const PurchasePage = ({ selectedItemId }) => {
+const PurchasePage = () => { // { selectedItemId } inside parenths
     console.log("Navigated to purchase page...");
 
     const [searchParams] = useSearchParams();
@@ -45,7 +45,7 @@ const PurchasePage = ({ selectedItemId }) => {
         if (itemId) {
             fetchItem();
         }
-    }, [selectedItemId]);
+    },); //     }, [selectedItemId]);
 
     const handlePurchase = async () => {
         try {

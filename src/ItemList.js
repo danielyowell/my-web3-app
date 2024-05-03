@@ -9,7 +9,7 @@ const ItemList = () => {
   console.log('BUY ITEM');
 
   // Handle purchase
-  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [, setSelectedItemId] = useState(null); // const [selectedItemId, setSelectedItemId] = useState(null);
   const navigate = useNavigate();
   const handlePurchase = (itemId) => {
     console.log("Handling purchase for item id:", itemId);
@@ -55,7 +55,7 @@ const ItemList = () => {
         </Link>
         <div>
           <h2>Available Items</h2>
-          <div className="item-list-container">
+          <div className="SCROLLABLE_ITEM_LIST">
             <ul className="item-list">
               {items.map((item) => (
                 <li key={item.id}>

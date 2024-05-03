@@ -22,7 +22,7 @@ const CreateItem = () => {
 
       setSuccessMessage('Loading...');
       console.log('Creating item...');
-      
+
       // Create the item
       await itemMarketplaceContract.methods
         .createItem(name, description, web3.utils.toWei(price, 'ether'))
@@ -47,7 +47,7 @@ const CreateItem = () => {
           <button onClick={() => console.log('Back')}>Back</button>
         </Link>
         <div>
-          <header className="box-container2">
+          <header className="CREATE_ITEM_MENU">
             <h2>Create Item</h2>
             <form onSubmit={handleSubmit}>
               <div>
