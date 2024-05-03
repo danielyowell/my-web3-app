@@ -5,9 +5,9 @@ import React from 'react';
 import app_logo from './imgs/app_logo.png';
 
 import CONNECT_WALLET from './components/CONNECT_WALLET.js';
+import account from        './components/CONNECT_WALLET.js';
 import CreateItem from     './components/CreateItem';
 import ItemList from       './components/ItemList';
-import account from        './components/CONNECT_WALLET.js';
 import PurchasePage from   './components/PurchasePage.js';
 
 function App() {
