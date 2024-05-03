@@ -1,9 +1,3 @@
-/* 
-###################################
-BASICS
-###################################
-*/
-
 .App {
   background-image: url("imgs/bg.png");
   background-size: 100vw 100vh;
@@ -28,42 +22,7 @@ BASICS
   color: white;
 }
 
-.SELL_ITEM {
-  background-color: var(--FOREGROUND);
-  min-height: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 15px;
-}
-
-.ETH {
-  background-image: url("imgs/ETH.png");
-  min-height: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(2px + 2vmin);
-  color: white;
-  padding: 5px;
-  /* border-radius: 15px; */
-  width: 500px;
-}
-
-.loading {
-  color: white;
-}
-
-.wallet {
-  color: white;
-}
-
-/* BUTTONS!! */
-/* General button styles */
+/* BASIC BUTTON FORMATTING */
 button {
   background-image: url('imgs/BUTTON2.png');
   padding: 10px 20px;
@@ -78,31 +37,6 @@ button {
   width: 38vh;
   color: white;
   font-weight: bold;
-}
-
-.submit {
-  background-image: url('imgs/SUBMITBUTTON.png');
-}
-
-/* Specific styles for the "Buy Items" button */
-.buy-btn {
-  background-image: url("imgs/SUBMITBUTTON.png");
-  display: flex;
-  flex-direction: column;
-  color: white;
-  border: none;
-}
-
-.buyme {
-  /* adjust width of button */
-  width: 24.9vh;
-  background-image: url("imgs/purchase_button.png");
-  justify-content: center;
-  align-items: center;
-}
-
-.buy-btn:hover {
-  background-color: #45a049;
 }
 
 

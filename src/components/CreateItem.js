@@ -83,7 +83,7 @@ const CreateItem = () => {
                 />
               </div>
               <br />
-              <button className="">Submit</button> {/* buy-btn */}
+              <button>Submit</button>
             </form>
             {successMessage && <p>{successMessage}</p>}
           </header>
