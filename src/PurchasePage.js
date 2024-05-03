@@ -10,7 +10,7 @@ const PurchasePage = ({ selectedItemId }) => {
 
     const [searchParams] = useSearchParams();
     const itemId = searchParams.get('itemId');
-
+    console.log("The item you want to buy is...",itemId);
     
     // By default, the item is set to null and loading is set to true
     const [item, setItem] = useState(null);
@@ -49,13 +49,20 @@ const PurchasePage = ({ selectedItemId }) => {
 
     const handlePurchase = async () => {
         try {
-            await itemMarketplaceContract.methods.purchaseItem(selectedItemId).send({
-                from: web3.currentProvider.selectedAddress,
+            const fromAddress = web3.currentProvider.selectedAddress;
+            if (!fromAddress) {
+                console.log('fromAddress:', fromAddress);
+                setPurchaseError('Please connect your wallet to proceed with the purchase.');
+                return;
+            }
+    
+            await itemMarketplaceContract.methods.purchaseItem(itemId).send({
+                from: fromAddress,
                 value: web3.utils.toWei(item.price, 'ether'),
             });
             navigate('/');
         } catch (error) {
-            setPurchaseError('Error purchasing item:', error);
+            setPurchaseError(`Error purchasing item: ${error.message}`);
             console.error('Error purchasing item:', error);
         }
     };

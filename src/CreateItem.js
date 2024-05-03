@@ -65,7 +65,7 @@ const CreateItem = () => {
               </div>
               <br />
               <div>
-                <label htmlFor="price">Price (Sepolia): </label>
+                <label htmlFor="price">Price (max 0.0001): </label>
                 <input
                   type="number"
                   id="price"
