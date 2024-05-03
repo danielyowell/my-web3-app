@@ -1,7 +1,8 @@
-import './App.css';
+import '../App.css';
+import '../css/CreateItem.css';
 import React, { useState } from 'react';
-import web3 from './web3';
-import itemMarketplaceContract from './itemMarketplaceContract';
+import web3 from '../web3';
+import itemMarketplaceContract from '../itemMarketplaceContract';
 import { Link } from 'react-router-dom';
 
 const CreateItem = () => {

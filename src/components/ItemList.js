@@ -1,8 +1,9 @@
 /* This component lists items for purchase. */
-import './App.css';
+import '../App.css';
+import '../css/ItemList.css';
 import React, { useState, useEffect } from 'react';
-import web3 from './web3';
-import itemMarketplaceContract from './itemMarketplaceContract';
+import web3 from '../web3';
+import itemMarketplaceContract from '../itemMarketplaceContract';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ItemList = () => {

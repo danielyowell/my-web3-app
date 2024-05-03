@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import web3 from '../web3';
 
-const MyComponent = () => {
+const CONNECT_WALLET = () => {
   const [account, setAccount] = useState('');
 
   useEffect(() => {
@@ -29,4 +29,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default CONNECT_WALLET;

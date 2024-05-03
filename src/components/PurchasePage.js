@@ -1,8 +1,9 @@
 /* This component handles purchases. */
+import '../css/PurchasePage.css';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import web3 from './web3';
-import itemMarketplaceContract from './itemMarketplaceContract';
+import web3 from '../web3';
+import itemMarketplaceContract from '../itemMarketplaceContract';
 import { useSearchParams } from 'react-router-dom';
 
 const PurchasePage = () => { // { selectedItemId } inside parenths
@@ -76,7 +77,7 @@ const PurchasePage = () => { // { selectedItemId } inside parenths
     }
 
     return (
-        <div className='cart'>
+        <div className='ITEM_CART'>
             <Link to="/buy-items">
                 <button onClick={() => console.log('Back')}>Back</button>
             </Link>

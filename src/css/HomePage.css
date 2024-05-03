@@ -1,0 +1,16 @@
+.HOME_MENU {
+    background-image: url('../imgs/menu.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50vh;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.LOGO_SIZE {
+    max-width: 100%;
+    max-height: 100%;
+}

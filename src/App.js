@@ -1,13 +1,13 @@
 import './App.css';
+import './css/HomePage.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import React from 'react';
 import CONNECT_WALLET from './components/CONNECT_WALLET.js';
-import CreateItem from './CreateItem';
-import ItemList from './ItemList';
+import CreateItem from './components/CreateItem';
+import ItemList from './components/ItemList';
 import title2 from './imgs/title2.png';
 import account from './components/CONNECT_WALLET.js';
-import PurchasePage from './PurchasePage.js';
-//import PurchasePage2 from './PurchasePage2.js';
+import PurchasePage from './components/PurchasePage.js';
 
 function App() {
   return (

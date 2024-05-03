@@ -40,27 +40,6 @@ BASICS
   padding: 15px;
 }
 
-.TITLE {
-  background-image: url("imgs/title2.png");
-  min-height: 10vh;
-  max-height: 15vh;
-  font-size: calc(15px + 2vmin);
-  color: white;
-  padding: 5px;
-}
-
-.FOOTER {
-  background-color: #000000;
-  min-height: 6vh;
-  display: flex;
-  flex-direction: row;
-  align-items: right;
-  justify-content: right;
-  font-size: calc(5px + 2vmin);
-  color: white;
-  padding: 15px;
-}
-
 .ETH {
   background-image: url("imgs/ETH.png");
   min-height: 5vh;
@@ -83,7 +62,7 @@ BASICS
   color: white;
 }
 
-/* PART 2: BUTTONS!! */
+/* BUTTONS!! */
 /* General button styles */
 button {
   background-image: url('imgs/BUTTON2.png');
@@ -122,121 +101,12 @@ button {
   align-items: center;
 }
 
-.cart {
-  background-image: url("imgs/menu.png");
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: contain; /* Adjust the button size to match the image */
-  background-position: center; /* Center the image within the button */
-  width: 38vh;
-  color: white;
-  font-weight: bold;
-}
-
 .buy-btn:hover {
   background-color: #45a049;
 }
 
-.b1:hover {
-  background-color: #45a049;
-}
 
-/* 
-###################################
-EVERYTHING INVOLVING THE ITEM LIST
-###################################
-*/
 
-/* Enables scrolling */
-.SCROLLABLE_ITEM_LIST {
-  max-height: 460px; /* Adjust the height as needed */
-  overflow-y: auto; /* Enable vertical scrolling */
-}
 
-/* Lists several items per row */
-.item-list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-}
-
-/* An item of the list */
-.item-list li {
-  background-image: url("imgs/ITEM.png");
-  width: 320px; /* adjust to taste */
-  padding: 20px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  font-size: 15px;
-  line-height: 0.5;
-}
-
-/* Adjusts the distance between the top of the image and the text */
-.item-list h3 {
-  margin-top: 0;
-  color: white;
-}
-
-/* Adjusts the distance between the top of the image and the purchase button */
-.item-list p {
-  margin-bottom: 5px;
-  color: white;
-}
-
-/* These are text colors corresponding to item type/availability */
-.item-list .price {
-  color: #4CAF50;
-  font-weight: bolder;
-}
-.item-list .seller {
-  color: #2196F3;
-}
-.item-list .available {
-  color: #4CAF50;
-  font-weight: bold;
-}
-.item-list .unavailable {
-  color: #ff4d4d;
-  font-weight: bold;
-}
-
-/* 
-###################################
-EVERYTHING INVOLVING MENUS
-###################################
-*/
-
-.HOME_MENU {
-  background-image: url('imgs/menu.png');
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  width: 50vh;
-  position: relative;
-  background-repeat: no-repeat;
-}
-
-.CREATE_ITEM_MENU {
-  background-image: url('imgs/create_item.png'); /*background-image: url('imgs/create_item.png');*/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  width: 60vh;
-  position: relative;
-  background-repeat: no-repeat;
-}
-
-.LOGO_SIZE {
-  max-width: 100%;
-  max-height: 100%;
-}
 
 

@@ -1,0 +1,11 @@
+.CREATE_ITEM_MENU {
+    background-image: url('../imgs/create_item.png'); /*background-image: url('imgs/create_item.png');*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 60vh;
+    position: relative;
+    background-repeat: no-repeat;
+  }
