@@ -21,6 +21,18 @@ const CreateItem = () => {
       const accounts = await web3.eth.getAccounts();
       const account = accounts[0];
 
+      // Check if the price is greater than 0.0001
+      if (parseFloat(price) > 0.0001) {
+        setSuccessMessage('Price cannot be greater than 0.0001');
+        return;
+      }
+
+      // Check if the name and description are longer than 50 characters
+      if (name.length > 50 || description.length > 50) {
+        setSuccessMessage('Name and description cannot be longer than 50 characters');
+        return;
+      }
+
       setSuccessMessage('Loading...');
       console.log('Creating item...');
 
@@ -58,7 +70,9 @@ const CreateItem = () => {
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  placeholder="Maximum 50 characters"
                   required
+                  maxLength="50"
                 />
               </div>
               <br />
@@ -68,18 +82,22 @@ const CreateItem = () => {
                   id="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Maximum 50 characters"
                   required
+                  maxLength="50"
                 />
               </div>
               <br />
               <div>
-                <label htmlFor="price">Price (max 0.0001): </label>
+                <label htmlFor="price">Price (Sepolia ETH): </label>
                 <input
                   type="number"
                   id="price"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
+                  placeholder="Maximum 0.0001"
                   required
+                  max="0.0001"
                 />
               </div>
               <br />
