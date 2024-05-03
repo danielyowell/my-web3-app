@@ -8,6 +8,7 @@ const CreateItem = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   console.log('CREATE ITEM');
 
@@ -19,10 +20,16 @@ const CreateItem = () => {
       const accounts = await web3.eth.getAccounts();
       const account = accounts[0];
 
+      setSuccessMessage('Loading...');
+      console.log('Creating item...');
+      
       // Create the item
       await itemMarketplaceContract.methods
         .createItem(name, description, web3.utils.toWei(price, 'ether'))
         .send({ from: account });
+
+      // Display success message
+      setSuccessMessage('Item created successfully!');
 
       // Reset the form fields
       setName('');
@@ -77,6 +84,7 @@ const CreateItem = () => {
               <br />
               <button className="">Submit</button> {/* buy-btn */}
             </form>
+            {successMessage && <p>{successMessage}</p>}
           </header>
         </div>
       </header>
