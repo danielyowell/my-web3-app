@@ -34,8 +34,9 @@ const ItemList = () => {
             name: `${i}. ${item.name}`, // Prepend item number to name
             description: item.description,
             price: web3.utils.fromWei(item.price, 'ether'),
-            seller: item.seller.slice(0, 5) + '...'  + item.seller.slice(item.seller.length-3, item.seller.length),
+            seller: item.seller.slice(0, 5) + '...' + item.seller.slice(item.seller.length - 3, item.seller.length),
             isAvailable: item.isAvailable,
+            transactionHash: item.transactionHash, // Add the transaction hash
           });
         }
 
@@ -60,17 +61,24 @@ const ItemList = () => {
             <ul className="item-list">
               {items.map((item) => (
                 <li key={item.id}>
-                  <h3>{item.name}</h3> {/* Item name with number */}
+                  <h3 className="iname">{item.name}</h3>
                   <p>{item.description}</p>
                   <p className="price">Price: {item.price} SepoliaETH</p>
                   <p className="seller">Seller: {item.seller}</p>
                   <p className={item.isAvailable ? 'available' : 'unavailable'}>
                     Available: {item.isAvailable ? 'Yes' : 'No'}
                   </p>
-                  <br /><br />
-                  {item.isAvailable && (
-                    <button className="buyme" onClick={() => handlePurchase(item.id)}>Purchase</button>
+                  {item.transactionHash && (
+                    <p>Transaction Hash: {item.transactionHash}</p>
                   )}
+                  <br />
+                  <center>
+                    {item.isAvailable && (
+                      <button className="buyme" onClick={() => handlePurchase(item.id)}>
+                        Purchase
+                      </button>
+                    )}
+                  </center>
                 </li>
               ))}
             </ul>

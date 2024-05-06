@@ -9,6 +9,7 @@ import ItemList from './components/ItemList';
 import PurchasePage from './components/PurchasePage.js';
 
 function App() {
+  document.title = 'web3bay';
   return (
     <BrowserRouter>
       <div className="App">

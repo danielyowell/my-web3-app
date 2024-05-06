@@ -15,35 +15,35 @@ const CreateItem = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       // Get the user's Ethereum account
       const accounts = await web3.eth.getAccounts();
       const account = accounts[0];
-
-      // Check if the price is greater than 0.0001
-      if (parseFloat(price) > 0.0001) {
-        setSuccessMessage('Price cannot be greater than 0.0001');
-        return;
-      }
-
+  
+      // // Check if the price is greater than 0.0001
+      // if (parseFloat(price) > 0.0001) {
+      //   setSuccessMessage('Price cannot be greater than 0.0001');
+      //   return;
+      // }
+  
       // Check if the name and description are longer than 50 characters
       if (name.length > 50 || description.length > 50) {
         setSuccessMessage('Name and description cannot be longer than 50 characters');
         return;
       }
-
+  
       setSuccessMessage('Loading...');
       console.log('Creating item...');
-
-      // Create the item
-      await itemMarketplaceContract.methods
+  
+      // Create the item and get the transaction hash
+      const tx = await itemMarketplaceContract.methods
         .createItem(name, description, web3.utils.toWei(price, 'ether'))
         .send({ from: account });
-
-      // Display success message
-      setSuccessMessage('Item created successfully!');
-
+  
+      // Display success message with the transaction hash
+      setSuccessMessage(`Item created successfully! Transaction hash: ${tx.transactionHash}`);
+  
       // Reset the form fields
       setName('');
       setDescription('');
@@ -98,6 +98,7 @@ const CreateItem = () => {
                   placeholder="Maximum 0.0001"
                   required
                   max="0.0001"
+                  // min="0.00000001"
                 />
               </div>
               <br />
