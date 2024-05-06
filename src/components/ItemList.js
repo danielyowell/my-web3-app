@@ -23,28 +23,32 @@ const ItemList = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      try {
-        const itemCount = await itemMarketplaceContract.methods.itemCount().call();
-        const fetchedItems = [];
+  try {
+    const itemCount = await itemMarketplaceContract.methods.itemCount().call();
+    const fetchedItems = [];
 
-        for (let i = 1; i <= itemCount; i++) {
-          const item = await itemMarketplaceContract.methods.items(i).call();
-          fetchedItems.push({
-            id: item.id,
-            name: `${i}. ${item.name}`, // Prepend item number to name
-            description: item.description,
-            price: web3.utils.fromWei(item.price, 'ether'),
-            seller: item.seller.slice(0, 5) + '...' + item.seller.slice(item.seller.length - 3, item.seller.length),
-            isAvailable: item.isAvailable,
-            transactionHash: item.transactionHash, // Add the transaction hash
-          });
-        }
+    for (let i = 1; i <= itemCount; i++) {
+      const item = await itemMarketplaceContract.methods.items(i).call();
+      const transactionHash = await itemMarketplaceContract.methods.item_CreationHashes(i).call();
+      const purchaseTransactionHash = await itemMarketplaceContract.methods.item_PurchaseHashes(i).call();
 
-        setItems(fetchedItems);
-      } catch (error) {
-        console.error('Error fetching items:', error);
-      }
-    };
+      fetchedItems.push({
+        id: item.id,
+        name: `${i}. ${item.name}`,
+        description: item.description,
+        price: web3.utils.fromWei(item.price, 'ether'),
+        seller: item.seller.slice(0, 5) + '...' + item.seller.slice(item.seller.length - 3, item.seller.length),
+        isAvailable: item.isAvailable,
+        transactionHash: transactionHash,
+        purchaseTransactionHash: item.isAvailable ? null : purchaseTransactionHash, // Set purchaseTransactionHash to null if the item is available
+      });
+    }
+
+    setItems(fetchedItems);
+  } catch (error) {
+    console.error('Error fetching items:', error);
+  }
+};
 
     fetchItems();
   }, []);
@@ -62,15 +66,22 @@ const ItemList = () => {
               {items.map((item) => (
                 <li key={item.id}>
                   <h3 className="iname">{item.name}</h3>
-                  <p>{item.description}</p>
+                  <p className='desc'>{item.description}</p>
                   <p className="price">Price: {item.price} SepoliaETH</p>
                   <p className="seller">Seller: {item.seller}</p>
                   <p className={item.isAvailable ? 'available' : 'unavailable'}>
                     Available: {item.isAvailable ? 'Yes' : 'No'}
                   </p>
+                  <div className='c_hash'>
                   {item.transactionHash && (
-                    <p>Transaction Hash: {item.transactionHash}</p>
+                    <p>Creation Transaction Hash: {item.transactionHash}</p>
                   )}
+                  </div>
+                  <div className='c_hash'>
+                  {item.purchaseTransactionHash && (
+                    <p>Purchase Transaction Hash: {item.purchaseTransactionHash}</p>
+                  )}
+                  </div>
                   <br />
                   <center>
                     {item.isAvailable && (

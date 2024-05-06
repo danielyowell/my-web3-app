@@ -23,7 +23,7 @@ EVERYTHING INVOLVING THE ITEM LIST / PURCHASE PAGE
 .item-list li {
   background-image: url("../imgs/ITEM.png");
   width: 320px;
-  height: 170px;
+  height: 200px;
   /* adjust to taste */
   padding: 20px;
   margin-bottom: 10px;
@@ -52,6 +52,12 @@ EVERYTHING INVOLVING THE ITEM LIST / PURCHASE PAGE
   color: white;
 }
 
+.item-list .desc {
+  font-size: 13px;
+  line-height: 1;
+  color: white;
+}
+
 /* These are text colors corresponding to item type/availability */
 .item-list .price {
   color: #4CAF50;
@@ -70,6 +76,11 @@ EVERYTHING INVOLVING THE ITEM LIST / PURCHASE PAGE
 .item-list .unavailable {
   color: #ff4d4d;
   font-weight: bold;
+}
+
+.item-list .c_hash {
+  font-size: 9px;
+  line-height: 10px;
 }
 
 /* PURCHASE BUTTON */

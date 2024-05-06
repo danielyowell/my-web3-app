@@ -21,11 +21,11 @@ const CreateItem = () => {
       const accounts = await web3.eth.getAccounts();
       const account = accounts[0];
   
-      // // Check if the price is greater than 0.0001
-      // if (parseFloat(price) > 0.0001) {
-      //   setSuccessMessage('Price cannot be greater than 0.0001');
-      //   return;
-      // }
+      // Check if the price is greater than 0.0001
+      if (parseFloat(price) > 0.0001) {
+        setSuccessMessage('Price cannot be greater than 0.0001');
+        return;
+      }
   
       // Check if the name and description are longer than 50 characters
       if (name.length > 50 || description.length > 50) {
@@ -42,7 +42,7 @@ const CreateItem = () => {
         .send({ from: account });
   
       // Display success message with the transaction hash
-      setSuccessMessage(`Item created successfully! Transaction hash: ${tx.transactionHash}`);
+      setSuccessMessage(`Item created successfully!\nTransaction hash: ${tx.transactionHash}`);
   
       // Reset the form fields
       setName('');
@@ -104,7 +104,9 @@ const CreateItem = () => {
               <br />
               <button>Submit</button>
             </form>
+            <div className='success'>
             {successMessage && <p>{successMessage}</p>}
+            </div>
           </header>
         </div>
       </div>

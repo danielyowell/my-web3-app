@@ -25,3 +25,8 @@
   font-weight: 500;
   font-size: small;
 }
+
+.success {
+  font-weight: normal;
+  font-size: 10px;
+}
